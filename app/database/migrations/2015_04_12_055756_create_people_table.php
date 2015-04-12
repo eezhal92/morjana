@@ -12,10 +12,14 @@ class CreatePeopleTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('people', function(Blueprint $table)
+		Schema::create('people', function(Blueprint $table)
 		{
-			$table->increments();
-            $table->string();
+			$table->increments('id');
+            $table->string('first_name');
+			$table->string('last_name');
+			$table->text('address');
+			$table->integer('village_id');
+			$table->date('date_of_birth');
 		});
 	}
 
@@ -26,10 +30,7 @@ class CreatePeopleTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('people', function(Blueprint $table)
-		{
-			//
-		});
+		Schema::dropIfExists('people');
 	}
 
 }
