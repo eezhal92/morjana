@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration {
             $table->enum('active', ['yes', 'no']);
             $table->dateTime('last_login');
             $table->rememberToken();
-            $table->timestamps();    
+            $table->timestamps();
         });
 	}
 
