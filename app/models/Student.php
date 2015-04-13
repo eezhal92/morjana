@@ -23,7 +23,7 @@ class Student extends Eloquent {
     
     protected $hidden = ['id'];
    
-    public function person() {
+    public function people() {
         return $this->belongsTo('People', 'people_id');
     } 
 
