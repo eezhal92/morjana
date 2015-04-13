@@ -1,0 +1,1 @@
+{{ Form::open(['route' => account.remind'']) }}
