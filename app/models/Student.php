@@ -9,32 +9,22 @@ class Student extends Eloquent {
 	 */
 	protected $table = 'students';
 
-    protected $fillable = ['people_id', 'father_id', 'mother_id'];
+    protected $fillable = [
+        'people_id', 'student_number', 'univercity_id', 'major_id', 
+        'degree_id', 'year', 'status', 'type', 'amount_of_grant', 
+        'father_id', 'mother_id'
+    ];
     
-    protected $visible = ['people_id', 'father_id', 'mother_id'];
+    protected $visible = [
+        'people_id', 'student_number', 'univercity_id', 'major_id', 
+        'degree_id', 'year', 'status', 'type', 'amount_of_grant', 
+        'father_id', 'mother_id'
+    ];
     
     protected $hidden = ['id'];
-    
-    private $person; 
    
     public function person() {
         return $this->belongsTo('People', 'people_id');
-    }
-    
-    /*public function getFirstNameAttribute() {
-        return $this->person->first_name;
-    }
-    
-    public function getLastNameAttribute() {
-        return $this->person->last_name;
-    }
-    
-    public function getAddressAttribute() {
-        return $this->person->address;
-    }
-    
-    public function getDateOfBirthAttribute() {
-        return $this->person->date_of_birth;
-    }*/ 
+    } 
 
 }
