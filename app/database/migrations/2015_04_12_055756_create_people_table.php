@@ -20,6 +20,7 @@ class CreatePeopleTable extends Migration {
 			$table->text('address');
 			$table->integer('village_id');
 			$table->date('date_of_birth');
+            $table->timestamps();
 		});
 	}
 
