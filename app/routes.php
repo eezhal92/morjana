@@ -41,5 +41,15 @@ Route::group(['prefix' => 'account'], function() {
         'as' => 'account.postRemind',
         'uses' => 'RemindersController@postRemind'
     ]);
+        
+    Route::get('password/reset/{token}', [
+        'as' => 'account.getReset',
+        'uses' => 'RemindersController@getReset'
+    ]);
+    
+    Route::post('password/reset', [
+        'as' => 'account.postReset',
+        'uses' => 'RemindersController@postReset'
+    ]);
     
 });
