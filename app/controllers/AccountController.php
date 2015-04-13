@@ -9,6 +9,11 @@ class AccountController extends \BaseController {
 	 */
 	public function login()
 	{
+        if(Auth::check())
+        {
+            return Redirect::to('/');
+        }
+            
 		return View::make('account.login');
 	}
     
