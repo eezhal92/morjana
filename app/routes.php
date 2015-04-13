@@ -15,3 +15,31 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::group(['prefix' => 'account'], function() {
+    Route::get('login', [
+        'as' => 'account.login',
+        'uses' => 'AccountController@login'
+    ]);
+    
+    Route::post('authenticate', [
+        'as' => 'account.authenticate',
+        'uses' => 'AccountController@authenticate'
+    ]);
+    
+    Route::get('logout', [
+        'as' => 'account.logout',
+        'uses' => 'AccountController@logout'
+    ]);
+    
+    Route::get('remind', [
+        'as' => 'account.getRemind',
+        'uses' => 'RemindersController@getRemind'
+    ]);
+    
+    Route::post('remind', [
+        'as' => 'account.postRemind',
+        'uses' => 'RemindersController@postRemind'
+    ]);
+    
+});
