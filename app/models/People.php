@@ -10,7 +10,7 @@ class People extends Eloquent {
 	protected $table = 'people';
 
     protected $fillable = [
-        'first_name', 'last_name', 'address', 'village_id', 'date_of_birth'
+        'first_name', 'last_name', 'gender', 'address', 'village_id', 'date_of_birth'
     ];
     
     public $timestamps = true;
