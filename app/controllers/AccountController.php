@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 class AccountController extends \BaseController {
 
 	/**
@@ -33,6 +35,10 @@ class AccountController extends \BaseController {
         }
         
         if(Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
+            $user = Auth::user();
+            $user->last_login = Carbon::now();
+            $user->save();
+            
             return Redirect::intended('/');
         } else {
             return Redirect::back()->with('message', 'Cannot logging you in.');

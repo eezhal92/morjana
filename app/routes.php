@@ -53,3 +53,10 @@ Route::group(['prefix' => 'account'], function() {
     ]);
     
 });
+
+Route::group(['prefix' => 'cp'], function() {
+    Route::get('/dashboard', [
+        'as' => 'cp.dashboard',
+        'uses' => 'ControlPanelController@dashboard'
+    ]);
+});
