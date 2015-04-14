@@ -11,6 +11,7 @@ class StudentTableSeeder extends Seeder {
             [
                 'first_name'    => 'John',
                 'last_name'     => 'Doe',
+                'gender'        => 'male',
                 'address'       => 'Wallstreet st.',
                 'date_of_birth' => '1992-05-11',
                 'village_id'     => 2
@@ -18,6 +19,7 @@ class StudentTableSeeder extends Seeder {
             [
                 'first_name'    => 'Foo',
                 'last_name'     => 'Bar',
+                'gender'        => 'male',                
                 'address'       => 'Google HQ st.',
                 'date_of_birth' => '1992-07-20',
                 'village_id'    => 2
@@ -25,6 +27,7 @@ class StudentTableSeeder extends Seeder {
             [
                 'first_name'    => 'Hello',
                 'last_name'     => 'World',
+                'gender'        => 'female',
                 'address'       => 'Apple Spaceship st.',
                 'date_of_birth' => '1990-01-20',
                 'village_id'    => 1

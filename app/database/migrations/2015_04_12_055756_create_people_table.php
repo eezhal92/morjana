@@ -17,6 +17,7 @@ class CreatePeopleTable extends Migration {
 			$table->increments('id');
             $table->string('first_name');
 			$table->string('last_name');
+			$table->enum('gender', ['male', 'female']);
 			$table->text('address');
 			$table->integer('village_id');
 			$table->date('date_of_birth');
