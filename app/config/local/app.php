@@ -15,6 +15,6 @@ return array(
 
 	'debug' => true,
     
-    'timezone' => 'Indonesia/Jakarta',
+    'timezone' => 'utc',
 
 );
