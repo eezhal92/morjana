@@ -14,7 +14,5 @@ return array(
 	*/
 
 	'debug' => true,
-    
-    'timezone' => 'utc',
 
 );
