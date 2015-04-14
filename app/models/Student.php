@@ -25,6 +25,10 @@ class Student extends Eloquent {
    
     public function people() {
         return $this->belongsTo('People', 'people_id');
-    } 
+    }
+    
+    public function major() {
+        return $this->belongsTo('Major');
+    }
 
 }
