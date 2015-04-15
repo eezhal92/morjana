@@ -41,7 +41,7 @@ class AccountController extends \BaseController {
             
             return Redirect::intended('/');
         } else {
-            return Redirect::back()->with('message', 'Cannot logging you in.');
+            return Redirect::back()->with('error', 'Cannot logging you in.');
         }
         
     }
