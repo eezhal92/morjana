@@ -58,11 +58,18 @@
 
     <!-- Bootstrap Core JavaScript -->
     {{ HTML::script('js/bootstrap.min.js') }}
-
+    
+    <!-- Autocomple   -->    
+    {{ HTML::script('js/jquery.autocomplete.min.js') }}
+    
     <!-- Morris Charts JavaScript -->
+<!--
     {{ HTML::script('js/plugins/morris/raphael.min.js') }}
     {{ HTML::script('js/plugins/morris/morris.min.js') }}
     {{ HTML::script('js/plugins/morris/morris-data.js') }}
+-->
+    
+    @yield('extra_script')
 
 </body>
 

@@ -6,11 +6,14 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                Students <small>master data</small>
+                Students <small>master data</small> 
+                <a href="{{ route('cp.students.create') }}" class="btn btn-primary pull-right">
+                    <i class="fa fa-plus"></i> Add New
+                </a>
             </h1>
             <ol class="breadcrumb">
                 <li class="active">
-                    <i class="fa fa-dashboard"></i> Dashboard
+                    <i class="fa fa-users"></i> Students
                 </li>
             </ol>
         </div>
