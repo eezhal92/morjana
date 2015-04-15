@@ -19,8 +19,8 @@ class CreatePeopleTable extends Migration {
 			$table->string('last_name');
 			$table->enum('gender', ['male', 'female']);
 			$table->text('address');
-			$table->integer('village_id');
-			$table->date('date_of_birth');
+			$table->integer('village_id')->nullable();
+			$table->date('date_of_birth')->nullable();
             $table->timestamps();
 		});
 	}
