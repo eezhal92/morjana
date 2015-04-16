@@ -30,5 +30,9 @@ class Student extends Eloquent {
     public function major() {
         return $this->belongsTo('Major');
     }
+    
+    public function univercity() {
+        return $this->belongsTo('Univercity', 'univercity_id');
+    }
 
 }
