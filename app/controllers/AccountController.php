@@ -39,7 +39,7 @@ class AccountController extends \BaseController {
             $user->last_login = Carbon::now();
             $user->save();
             
-            return Redirect::intended('/');
+            return Redirect::intended('/cp/dashboard');
         } else {
             return Redirect::back()->with('error', 'Cannot logging you in.');
         }
