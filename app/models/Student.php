@@ -1,5 +1,7 @@
 <?php
 
+use \Illuminate\Database\Eloquent\Collection;
+
 class Student extends Eloquent {
 
 	/**
@@ -33,6 +35,25 @@ class Student extends Eloquent {
     
     public function univercity() {
         return $this->belongsTo('Univercity', 'univercity_id');
+    }
+    
+    public function parents() {
+        $father = $this->father();
+        $mother = $this->mother();
+        
+        $parents = new Collection;
+        $parents->add($father);
+        $parents->add($mother);
+        
+        return $parents;
+    }
+    
+    public function father() {
+        return $this->belongsTo('People', 'father_id');
+    }
+    
+    public function mother() {
+        return $this->belongsTo('People', 'mother_id');
     }
 
 }
