@@ -61,3 +61,25 @@ Route::group(['prefix' => 'cp', 'before' => 'auth'], function() {
     
     Route::resource('students', 'StudentsController');
 });
+
+Route::group(['prefix' => 'services'], function() {
+    Route::get('cities', [
+        'as' => 'services.cities',
+        'uses' => 'ServicesController@cities'
+    ]);
+    
+    Route::get('villages', [
+        'as' => 'services.villages',
+        'uses' => 'ServicesController@villages'
+    ]);
+    
+    Route::get('autocomplete-univercities', [
+        'as' => 'services.autocomplete-univercities',
+        'uses' => 'ServicesController@autoUnivercities'
+    ]);
+    
+    Route::get('autocomplete-faculties', [
+        'as' => 'services.autocomplete-faculties',
+        'uses' => 'ServicesController@autoFaculties'
+    ]);
+});

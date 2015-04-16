@@ -187,7 +187,10 @@
                 .text("Please select province First"));
             
             var villages = $.get(
-                '/villages?sub_district_id=' + id
+                '/services/villages',
+                {
+                    sub_district_id: id
+                }
             ).done(function(result) {
                 console.log('getVillages');
                 $.each(result, function(key, value) {   
@@ -234,7 +237,7 @@
         }
 
         $('#faculty').devbridgeAutocomplete({
-            serviceUrl: '/faculties',
+            serviceUrl: '/services/autocomplete-faculties',
             onSearchStart: function () {
                  $('input[name="faculty_id"]').val('');
             },
@@ -252,7 +255,7 @@
         /*Univercity Form*/
         
         $('#univercity').devbridgeAutocomplete({
-            serviceUrl: '/univ',
+            serviceUrl: '/services/autocomplete-univercities',
             onSearchStart: function () {
                 $('.univercity-details').val('').attr('disabled', false);
                 $('input[name="univercity_id"]').val('');
@@ -274,19 +277,20 @@
                 .empty()
                 .append($("<option></option>")
                 .attr("value", "")                        
-                .text("Please select province First"))
-                .attr('disabled', true);
+                .text("Please select province First"));
             
             var cities = $.get(
-                '/cities?province_id=' + id
+                '/services/cities',
+                {
+                    province_id: id
+                }
             ).done(function(result) {
                 console.log('getCities');
                 $.each(result, function(key, value) {   
                      $('#univercityCityId')                         
                          .append($("<option></option>")
                          .attr("value", key)
-                         .text(value))
-                         .attr('disabled', false);; 
+                         .text(value)); 
                 })
             });
             
