@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/', [
-    'as' => 'dashboard',
-    'uses' => 'ControlPanelController@dashboard'
-]);
+Route::get('/', function() {
+    return View::make('hello');
+});
 
 Route::group(['prefix' => 'account'], function() {
     Route::get('login', [
@@ -54,8 +53,8 @@ Route::group(['prefix' => 'account'], function() {
     
 });
 
-Route::group(['prefix' => 'cp'], function() {
-    Route::get('/dashboard', [
+Route::group(['prefix' => 'cp', 'before' => 'auth'], function() {
+    Route::get('dashboard', [
         'as' => 'cp.dashboard',
         'uses' => 'ControlPanelController@dashboard'
     ]);
