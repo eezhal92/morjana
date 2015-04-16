@@ -58,7 +58,7 @@
                         </div>
                         <div class="form-group">
                             <label>Village</label>
-                            <select class="form-control" name="village" id="village" disabled="disabled">
+                            <select class="form-control" name="village_id" id="village" disabled="disabled">
                                 <option>-- Select Village --</option>
                             </select>
                         </div>

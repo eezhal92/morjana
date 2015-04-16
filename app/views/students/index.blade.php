@@ -50,7 +50,7 @@
               @foreach($students as $student)
                   <tr>
                     <td>{{ $student->student_number }}</td>
-                    <td>{{ $student->people->full_name }}</td>
+            <td><a href="{{ route('cp.students.show', $student->id) }}">{{ $student->people->full_name }}</a></td>
                     <td>{{ $student->people->gender }}</td>
                     <td>{{ $student->major->faculty->name }}</td>
                     <td>{{ $student->major->name }}</td>

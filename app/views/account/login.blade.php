@@ -38,8 +38,13 @@
 
             <div class="container-fluid">
                 
-                <div class="row">
-                    <div class="col-md-3 col-md-offset-7" style="background: #fff; margin-top: 120px; padding: 30px 20px;">
+                <div class="row" style="margin-top: 120px;">
+                    <div class="col-md-7 col-md-offset-1">
+                        <h1>Welcome to Morowali Sarjana</h1>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ipsa ducimus, at doloremque id, accusamus perferendis atque, reiciendis, quae molestias saepe natus. Laboriosam ad ea non quos pariatur consequuntur illo.</p>
+                    </div>
+                    <div class="col-md-3" style="background: #fff; padding: 20px 20px;">
                         {{ Form::open(['route' => 'account.authenticate']) }}
                             <div class="form-group">
                                 <label for="">Email</label>
@@ -50,11 +55,14 @@
                                 {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Your password goes here']) }}
                             </div>
                             <div class="form-group">
-                                <label for="">Remember me</label>                                
-                                {{ Form::checkbox('remember') }}
+                                                                
+                                {{ Form::checkbox('remember') }} <small>Remember me</small>
                             </div>
                             <input type="submit" class="btn btn-primary" value="Log In">
+                            <hr>
+                            <a href="{{ route('account.getRemind') }}">I forgot my password</a>
                         {{ Form::close() }}
+                    
                     </div>
                 </div>
                 
