@@ -259,7 +259,7 @@
             },
             onSelect: function (sug) {
                 getUniversity(sug);
-                alert(sug.data.id);
+//                alert(sug.data.id);
                 $('input[name="univercity_id"]').val(sug.data.id);
                 console.log('hihi');
             }
