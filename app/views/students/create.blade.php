@@ -80,7 +80,7 @@
                         
                         <div class="form-group @if($errors->first('sub_district_id')) has-error @endif">
                             <label for="sub_district_id">Sub District</label>
-                            {{ Form::select('sub_district_id', $sub_districts, null, ['id' => 'subDistrict', 'class'=> 'form-control']) }}
+                            {{ Form::select('sub_district_id', $sub_district_lists, null, ['id' => 'subDistrict', 'class'=> 'form-control']) }}
                             @if($errors->first('sub_district_id'))
                                 <span class="help-block"> {{ $errors->first('sub_district_id') }} </span>
                             @endif
@@ -173,7 +173,7 @@
                         
                         <div class="form-group @if($errors->first('univercity_type')) has-error @endif">
                             <label for="type">Public / Private</label>
-                            {{ Form::select('univercity_type', $univercity_type_options, null, ['id' => 'univercityType', 'class' => 'form-control univercity-details']) }}
+                            {{ Form::select('univercity_type', $univercity_type_lists, null, ['id' => 'univercityType', 'class' => 'form-control univercity-details']) }}
                             @if($errors->first('univercity_type'))
                                 <span class="help-block"> {{ $errors->first('univercity_type') }} </span>
                             @endif
@@ -181,7 +181,7 @@
                         
                         <div class="form-group @if($errors->first('univercity_province_id')) has-error @endif">
                             <label for="univercity_province_id">Province</label>
-                            {{ Form::select('univercity_province_id', $provinces, null, ['id' => 'univercityProvinceId', 'class'=> 'form-control univercity-details']) }}
+                            {{ Form::select('univercity_province_id', $province_lists, null, ['id' => 'univercityProvinceId', 'class'=> 'form-control univercity-details']) }}
                             @if($errors->first('univercity_province_id'))
                                 <span class="help-block"> {{ $errors->first('univercity_province_id') }} </span>
                             @endif
@@ -219,7 +219,7 @@
                         
                         <div class="form-group @if($errors->first('degree_id')) has-error @endif">
                             <label for="degree_id">Degree</label>                            
-                            {{ Form::select('degree_id', $degrees, null, ['class' => 'form-control']) }}
+                            {{ Form::select('degree_id', $degree_lists, null, ['class' => 'form-control']) }}
                             @if($errors->first('degree_id'))
                                 <span class="help-block"> {{ $errors->first('degree_id') }} </span>
                             @endif

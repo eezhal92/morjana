@@ -13,13 +13,13 @@ class StudentsController extends \BaseController
     
     public function create()
     {
-        $provinces = ['' => 'Please select univercity province'] + Province::lists('name', 'id');
-        $sub_districts = ['' => 'Please select sub district'] + SubDistrict::lists('name', 'id');
-        $univercity_type_options = ['' => 'Please select one', 'public' => 'Public', 'private' => 'Private'];
+//        $provinces = ['' => 'Please select univercity province'] + Province::lists('name', 'id');
+//        $sub_districts = ['' => 'Please select sub district'] + SubDistrict::lists('name', 'id');
+//        $univercity_type_options = ['' => 'Please select one', 'public' => 'Public', 'private' => 'Private'];
+//        
+//        $degrees = Degree::lists('name', 'id');
         
-        $degrees = Degree::lists('name', 'id');
-        
-        return View::make('students.create', compact('provinces', 'sub_districts', 'univercity_type_options', 'degrees'));
+        return View::make('students.create');
     }
     
     public function store() 
@@ -128,7 +128,9 @@ class StudentsController extends \BaseController
     
     public function edit($id)
     {
-    
+        $student = Student::find($id);
+        
+        return View::make('posts.edit', compact('student'));
     }  
     
     public function update($id)
