@@ -24,6 +24,34 @@ class Student extends Eloquent {
     ];
     
     protected $hidden = ['id'];
+    
+    public static $rules = [
+        'student_number' => 'required|min:3',
+        'first_name' => 'required|min:2',
+        'last_name' => 'required|min:2',
+        'gender' => 'required',
+        'address' => 'required|min:3',
+        'sub_district_id' => 'required',
+        'village_id' => 'required|numeric',
+
+        'father_first_name' => 'required|min:2',
+        'father_last_name' => 'required|min:2',
+        'father_address' => 'required|min:3',
+        'mother_first_name' => 'required|min:2',
+        'mother_last_name' => 'required|min:2',
+        'mother_address' => 'required|min:3',
+
+        'major' => 'required',
+        'univercity' => 'required',
+        'univercity_type' => 'required',
+        'univercity_province_id' => 'required|numeric',
+        'univercity_city_id' => 'required|numeric',
+
+        'degree_id' => 'required|numeric',
+        'year' => 'required|date_format:yyyy',
+        'type' => 'required',
+        'amount_of_grant' => 'required',
+    ];
    
     public function people() {
         return $this->belongsTo('People', 'people_id');
