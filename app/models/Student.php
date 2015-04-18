@@ -42,13 +42,14 @@ class Student extends Eloquent {
         'mother_address' => 'required|min:3',
 
         'major' => 'required',
+        'faculty' => 'required',
         'univercity' => 'required',
         'univercity_type' => 'required',
         'univercity_province_id' => 'required|numeric',
         'univercity_city_id' => 'required|numeric',
 
         'degree_id' => 'required|numeric',
-        'year' => 'required|date_format:yyyy',
+        'year' => 'required|min:4|max:4',
         'type' => 'required',
         'amount_of_grant' => 'required',
     ];
