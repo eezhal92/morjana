@@ -32,7 +32,7 @@ class StudentsController extends \BaseController
             Student::$rules
         );
         
-        if($validator->errors())
+        if($validator->fails())
         {
             return Redirect::back()->withInput()->withErrors($validator);
         }
@@ -101,7 +101,7 @@ class StudentsController extends \BaseController
             'major_id' => $major_id,
             'degree_id' => Input::get('degree_id'),
             'year' => Input::get('year'),
-            'type' => Input::get('student_type'),
+            'type' => Input::get('type'),
             'amount_of_grant' => Input::get('amount_of_grant'),
             'father_id' => $father->id,
             'mother_id' => $mother->id,
