@@ -13,14 +13,29 @@ class StudentsController extends \BaseController
     
     public function create()
     {
-        $provinces = ['' => 'Please select univercity province...'] + Province::lists('name', 'id');
-        $sub_districts = ['' => 'Please select sub district...'] + SubDistrict::lists('name', 'id');
+        $provinces = ['' => 'Please select univercity province'] + Province::lists('name', 'id');
+        $sub_districts = ['' => 'Please select sub district'] + SubDistrict::lists('name', 'id');
+        $univercity_type_options = ['' => 'Please select one', 'public' => 'Public', 'private' => 'Private'];
         
-        return View::make('students.create', compact('provinces', 'sub_districts'));
+        $degrees = Degree::lists('name', 'id');
+        
+        return View::make('students.create', compact('provinces', 'sub_districts', 'univercity_type_options', 'degrees'));
     }
     
     public function store() 
     {
+        
+//        dd(Input::all());
+        
+        $validator = Validator::make(
+            Input::all(),
+            Student::$rules
+        );
+        
+        if($validator->errors())
+        {
+            return Redirect::back()->withInput()->withErrors($validator);
+        }
         
         $univercity_id = Input::get('univercity_id');
         
