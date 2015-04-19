@@ -62,6 +62,8 @@
     <!-- Autocomple   -->    
     {{ HTML::script('js/jquery.autocomplete.min.js') }}
     
+    <!--  Bootbox  -->
+    {{ HTML::script('js/bootbox.min.js') }}
     <!-- Morris Charts JavaScript -->
 <!--
     {{ HTML::script('js/plugins/morris/raphael.min.js') }}

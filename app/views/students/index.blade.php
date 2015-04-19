@@ -55,8 +55,9 @@
                     <td>{{ $student->major->name }}</td>
                     <td>{{ $student->year }}</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-warning">Edit</a>
-                        <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="{{ route('cp.students.edit', $student->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                        <a class="btn btn-sm btn-danger btn-delete" data-url="{{ route('cp.students.destroy', $student->id) }}" data-token="{{ csrf_token() }}" >Delete</a>
+                        {{ Form::close() }}
                     </td>
                   </tr>  
               @endforeach
@@ -67,4 +68,33 @@
         </div>
     </div>
     
+@stop
+
+
+@section('extra_script')
+<script>
+    $(document).ready(function() {
+        $('.btn-delete').on('click', function() {
+            var url = $(this).data('url');
+            var token = $(this).data('token');
+            
+            bootbox.confirm({
+                message: "Are you sure want to deleted this one?",
+                callback: function(result) {
+                    if(result) {
+                        $.ajax({
+                            method: 'post',
+                            url: url,
+                            data: {_token: token, _method: 'delete'}
+                        }).done(function(res) {
+                            bootbox.alert({message:res.success});
+                        }).fail(function(res) {
+                            bootbox.alert({message: res});
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>
 @stop

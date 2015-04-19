@@ -7,6 +7,9 @@
     <div class="col-lg-12">
         <h1 class="page-header">
             Student <small>{{ $student->people->full_name }}</small>
+            <a href="{{ route('cp.students.edit', $student->id) }}" class="btn btn-primary pull-right">
+                <i class="fa fa-pencil"></i> Edit
+            </a>
         </h1>
         <ol class="breadcrumb">
             <li>
