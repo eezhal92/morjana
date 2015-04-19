@@ -84,5 +84,60 @@ class Student extends Eloquent {
     public function mother() {
         return $this->belongsTo('People', 'mother_id');
     }
+    
+    public function getFirstNameAttribute()
+    {
+        return $this->people->first_name;
+    }
+    
+    public function getLastNameAttribute()
+    {
+        return $this->people->last_name;
+    }
+    
+    public function getGenderAttribute()
+    {
+        return $this->people->gender;
+    }
+    
+    public function getAddressAttribute()
+    {
+        return $this->people->address;
+    }
+    
+    public function getVillageIdAttribute()
+    {
+        return $this->people->village->id;
+    }
+    
+    public function getFatherFirstNameAttribute()
+    {
+        return $this->father->first_name;
+    }
+    
+    public function getFatherLastNameAttribute()
+    {
+        return $this->father->last_name;
+    }
+    
+    public function getFatherAddressAttribute()
+    {
+        return $this->father->address;
+    }
+    
+    public function getMotherFirstNameAttribute()
+    {
+        return $this->mother->first_name;
+    }
+    
+    public function getMotherLastNameAttribute()
+    {
+        return $this->mother->last_name;
+    }
+    
+    public function getMotherAddressAttribute()
+    {
+        return $this->mother->address;
+    }
 
 }
