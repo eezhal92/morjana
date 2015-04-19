@@ -87,7 +87,12 @@
                             url: url,
                             data: {_token: token, _method: 'delete'}
                         }).done(function(res) {
-                            bootbox.alert({message:res.success});
+                            bootbox.alert({
+                                message:res.success, 
+                                callback: function() {
+                                     window.location.reload();
+                                }
+                            });
                         }).fail(function(res) {
                             bootbox.alert({message: res});
                         });
