@@ -233,7 +233,7 @@ class StudentsController extends \BaseController
         $student = Student::find($id);
         
         if(!$student) {
-            return Response::make(404, 'Fail delete student. Data not found.');
+            return Response::make('Fail delete student. Data not found.', 404);
         }
         
         $student->delete();

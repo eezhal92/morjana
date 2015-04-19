@@ -94,7 +94,7 @@
                                 }
                             });
                         }).fail(function(res) {
-                            bootbox.alert({message: res});
+                            bootbox.alert({message: res.responseText});
                         });
                     }
                 }
