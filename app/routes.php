@@ -89,3 +89,9 @@ Route::group(['prefix' => 'services'], function() {
         'uses' => 'ServicesController@autoFaculties'
     ]);
 });
+
+// coba rubah yg ini
+Route::get('test',[
+    'as' => 'justtest',
+    'uses' => 'HelloController@index'
+]);
