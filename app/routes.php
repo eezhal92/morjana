@@ -90,8 +90,14 @@ Route::group(['prefix' => 'services'], function() {
     ]);
 });
 
-// coba rubah yg ini
-Route::get('test',[
-    'as' => 'justtest',
-    'uses' => 'HelloController@index'
-]);
+// coba rubah yg ini lagi
+Route::group(['prefix' => 'test'], function(){
+
+    Route::get('test', function(){
+
+        return View::make('hello');
+
+    });
+});
+
+
