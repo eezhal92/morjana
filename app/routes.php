@@ -95,7 +95,7 @@ Route::group(['prefix' => 'test'], function(){
 
     Route::get('test', function(){
 
-        return "Hello World";
+        return View::make('hello');
 
     });
 });
