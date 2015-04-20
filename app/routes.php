@@ -89,15 +89,3 @@ Route::group(['prefix' => 'services'], function() {
         'uses' => 'ServicesController@autoFaculties'
     ]);
 });
-
-// coba rubah yg ini lagi
-Route::group(['prefix' => 'test'], function(){
-
-    Route::get('test', function(){
-
-        return View::make('hello');
-
-    });
-});
-
-
