@@ -9,6 +9,10 @@
                 <a href="{{ route('cp.students.create') }}" class="btn btn-primary pull-right">
                     <i class="fa fa-plus"></i> Add New
                 </a>
+                &nbsp;
+                <a href="{{ route('cp.excel') }}" class="btn btn-success pull-right" style="margin-right: 5px;">
+                    <i class="fa fa-file-excel-o"></i> Export to excel
+                </a>
             </h1>
             <ol class="breadcrumb">
                 <li class="active">

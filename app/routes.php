@@ -60,6 +60,12 @@ Route::group(['prefix' => 'cp', 'before' => 'auth'], function() {
     ]);
     
     Route::resource('students', 'StudentsController');
+    
+    Route::get('excel', [
+        'as' => 'cp.excel', 
+        'uses' => 'StudentsController@exportMaster'
+    ]);
+    
 });
 
 Route::group(['prefix' => 'services'], function() {

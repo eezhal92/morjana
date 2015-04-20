@@ -241,4 +241,20 @@ class StudentsController extends \BaseController
         return Response::json(['success' => 'Student succesfully been deleted']);
     }
     
+    public function exportMaster()
+    {
+        return Excel::create('student_master_data_' . date('d_m_Y'), function($excel) {
+
+                $excel->sheet('New sheet', function($sheet) {
+                    $students = Student::all()->load([
+                        'people.village.sub_district', 'major.faculty', 'univercity.city.province'
+                    ]);
+
+                    $sheet->loadView('students.excel')->with('students', $students);
+
+                });
+
+            })->export('xls');
+    }
+    
 }
